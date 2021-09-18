@@ -1,14 +1,16 @@
 module.exports = {
     roots: ['<rootDir>/'],
-    setupFilesAfterEnv: ['<rootDir>/test/setupTests.js'],
+    setupFilesAfterEnv: ['<rootDir>/test/setupTests.ts'],
     testRegex: '/test/.*(test|spec)\\.[jt]sx?$',
-    transform: {
-        '^.+\\.js?$': 'babel-jest',
+    globals: {
+        'ts-jest': {
+            tsConfig: 'tsconfig.json'
+        }
     },
     testEnvironment: "jsdom",
     moduleNameMapper: {
-        "\\.svg": "<rootDir>/test/svgrMock.js",
+        "\\.svg": "<rootDir>/test/svgrMock.ts",
         "\\.(css|scss)$": "identity-obj-proxy"
     },
-    moduleFileExtensions: ['js', 'jsx'],
+    moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
 };

@@ -13,7 +13,7 @@ const { ProvidePlugin } = require('webpack')
 module.exports = {
   mode: 'production',
   entry: {
-    index: './src/index.js',
+    index: './src/index.tsx',
   },
   output: {
     filename: 'js/[name].js',
@@ -21,7 +21,7 @@ module.exports = {
     libraryTarget: 'umd',
   },
   resolve: {
-    extensions: ['.js', '.jsx', 'scss'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss'],
   },
   optimization: {
     minimizer: [
@@ -32,7 +32,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
