@@ -1,8 +1,8 @@
-import ReactDOM from 'react-dom';
+import { render } from "@testing-library/react";
 import App from '../src/App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+it('renders properly', () => {
+  const { getByText, queryByText } = render(<App />);
+  expect(getByText(`React ts`)).toBeInTheDocument()
+  expect(queryByText(`Test worng`)).not.toBeInTheDocument()
 });
