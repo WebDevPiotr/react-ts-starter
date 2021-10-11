@@ -12,7 +12,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
-    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss'],
@@ -85,7 +84,6 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Babel + TypeScript + React = ❤️',
       template: 'src/index.html',
     }),
     new Dotenv(),

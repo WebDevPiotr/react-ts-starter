@@ -6,7 +6,6 @@ const Dotenv = require('dotenv-webpack');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { ProvidePlugin } = require('webpack')
 
@@ -94,7 +93,6 @@ module.exports = {
     new NodePolyfillPlugin(),
     new Dotenv(),
     new HtmlWebpackPlugin({
-      title: 'Wienerberger Visualization Tool',
       template: 'src/index.html',
     }),
     new MiniCssExtractPlugin({
@@ -106,7 +104,6 @@ module.exports = {
         test: /\.(js|css)$/,
       }
     ),
-    new BundleAnalyzerPlugin(),
     new ProvidePlugin({
       "React": "react",
     }),
